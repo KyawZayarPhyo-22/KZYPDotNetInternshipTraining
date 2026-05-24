@@ -3,12 +3,11 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>KZYPDotNetInternshipTraining.EFCoreSample_Model_First_</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup>
+	
+	<ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.16" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.16">
@@ -22,5 +21,7 @@
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
   </ItemGroup>
+	
+  
 
 </Project>

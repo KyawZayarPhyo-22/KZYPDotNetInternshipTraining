@@ -42,7 +42,7 @@ public class EFCoreDatabaseSample
             StudentName = "Mg Nyi",
             FatherName = "U Lwin Lwin",
             Address = "Yangon",
-            DateOfBirth = new DateTime(2000, 1, 1),
+            DateOfBirth = new DateTime(2003, 11, 11),
             CreatedDateTime = DateTime.Now,
             CreatedBy = "1"
         };
@@ -60,7 +60,7 @@ public class EFCoreDatabaseSample
             System.Console.WriteLine("Data not found");
             return;
         }
-        student.StudentName = "Naing Linn Aung";
+        student.StudentName = "Aung Khant Kyaw";
         int result = _db.SaveChanges();
         System.Console.WriteLine(result > 0 ? "Updating Successful" : "Updating Failed");
 

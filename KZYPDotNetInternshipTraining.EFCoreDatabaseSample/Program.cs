@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-using KZYPDotNetInternshipTraining.EFCoreDatabase;
-using KZYPDotNetInternshipTraining.EFCoreDatabaseSample;
+﻿using KZYPDotNetInternshipTraining.EFCoreDatabaseSample;
 class Program
 {
     static void Main(string[] args)

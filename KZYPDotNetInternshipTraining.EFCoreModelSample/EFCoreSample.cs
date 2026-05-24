@@ -1,5 +1,7 @@
-﻿using System.Text.Json.Serialization;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System.Net.Http.Json;
+using System.Text.Json.Serialization;
+using System.Xml;
 namespace KZYPDotNetInternshipTraining.EFCoreModelSample;
 
 public class EFCoreModelSample
@@ -27,7 +29,7 @@ public class EFCoreModelSample
             System.Console.WriteLine("Data not found");
             return;
         }
-        System.Console.WriteLine(JsonConvert.SerializeObject(item, Formatting.Indented));
+        System.Console.WriteLine(JsonConvert.SerializeObject(item, Newtonsoft.Json.Formatting.Indented));
 
 
 
@@ -40,7 +42,7 @@ public class EFCoreModelSample
             StudentName = "Mg Aung",
             FatherName = "U Kyaw",
             Address = "Yangon",
-            DateOfBirth = new DateTime(2003, 6,2),
+            DateOfBirth = new DateTime(2003, 6, 2),
             CreatedDateTime = DateTime.Now,
             CreatedBy = "1"
         };

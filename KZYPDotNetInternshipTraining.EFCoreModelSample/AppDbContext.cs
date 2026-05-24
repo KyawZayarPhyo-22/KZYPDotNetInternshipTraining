@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore; 
-using System.ComponentModel.DataAnnotations; 
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace KZYPDotNetInternshipTraining.EFCoreModelSample;
 
@@ -29,5 +29,6 @@ public class Student
     public string CreatedBy { get; set; } = null!;
     public DateTime? ModifiedDateTime { get; set; }
     public string? ModifiedBy { get; set; }
+
 
 }

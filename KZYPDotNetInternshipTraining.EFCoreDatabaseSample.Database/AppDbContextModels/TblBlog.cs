@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace KZYPDotNetInternshipTraining.EFCoreDatabase.Database.AppDbContextModels;
+namespace KZYPDotNetInternshipTraining.EFCoreDatabaseSample.Database.AppDbContextModels;
 
 public partial class TblBlog
 {
