@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using KZYPDotNetInternshipTraining.EFCoreDatabaseSample.Database.AppDbContextModels;
 using System.Text.Json.Serialization;
-namespace KZYPDotNetInternshipTraining.EFCoreDatabaseFirstSample;
+namespace KZYPDotNetInternshipTraining.EFCoreDatabaseSample;
 
 public class EFCoreDatabaseSample
 {

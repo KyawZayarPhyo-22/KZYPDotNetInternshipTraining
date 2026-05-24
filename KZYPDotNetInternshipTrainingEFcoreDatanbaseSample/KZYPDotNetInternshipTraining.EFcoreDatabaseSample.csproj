@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\KZYPDotNetInternshipTraining.DatabaseSample.Database\KZYPDotNetInternshipTraining.DatabaseSample.Database.csproj" />
+    <ProjectReference Include="..\KZYPDotNetInternshipTraining.EFCoreSample(Model First)\KZYPDotNetInternshipTraining.EFCoreModelSample.csproj" />
   </ItemGroup>
 
 </Project>
