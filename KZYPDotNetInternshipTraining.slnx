@@ -1,4 +1,8 @@
 <Solution>
-  <Project Path="KZYPDotNetInternshipTraining.AdoDotNetSample/KZYPDotNetInternshipTraining.AdoDotNetSample.csproj" />
-  <Project Path="KZYPDotNetInternshipTraining.Dapper/KZYPDotNetInternshipTraining.DapperSample.csproj" />
+  <Project Path="D:/C#training/KZYPDotNetInternshipTraining/KZYPDotNetInternshipTraining.AdoDotNetSample/KZYPDotNetInternshipTraining.AdoDotNetSample.csproj" />
+  <Project Path="D:/C#training/KZYPDotNetInternshipTraining/KZYPDotNetInternshipTraining.Dapper/KZYPDotNetInternshipTraining.DapperSample.csproj" />
+  <Project Path="KZYPDotNetInternshipTraining.DatabaseSample.Database/KZYPDotNetInternshipTraining.DatabaseSample.Database.csproj" Id="e623ee68-68ec-4506-b6c4-2f6089c19aca" />
+  <Project Path="KZYPDotNetInternshipTraining.EFCoreSample(Model First)/KZYPDotNetInternshipTraining.EFCoreModelSample.csproj" Id="317b732b-2cc9-4144-8cff-f72a7c285b26" />
+  <Project Path="KZYPDotNetInternshipTrainingEFcoreDatanbaseSample/KZYPDotNetInternshipTraining.EFcoreDatabaseSample.csproj" Id="8cf878c7-b7da-4cce-8f84-134a8d3df479" />
+  <Project Path="KZYPDotNetInternshipTrainingWebApiSample/KZYPDotNetInternshipTraining.WebApiSample.csproj" Id="f72744b5-0f44-465e-b36a-a32bf2b167b4" />
 </Solution>
