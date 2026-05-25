@@ -90,18 +90,43 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
             guest.Nrc = request.Nrc;
 
             await _context.SaveChangesAsync();
-            return NoContent();
+            return Ok(new { Message = "ဧည့်သည်အချက်အလက်ကို အောင်မြင်စွာ ပြင်ဆင်ပြီးပါပြီ။" });
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteGuest(int id)
         {
             var guest = await _context.Guests.FindAsync(id);
-            if (guest == null) return NotFound();
+            if (guest == null)
+            {
+                return NotFound(new RoomResponse<object>
+                {
+                    IsSuccess = false,
+                    Message = "ဖျက်သိမ်းမည့် ဧည့်သည်မှတ်တမ်း ရှာမတွေ့ပါ။",
+                    Data = null
+                });
+            }
+
+            var hasBookings = await _context.Bookings.AnyAsync(b => b.GuestId == id);
+            if (hasBookings)
+            {
+                return BadRequest(new RoomResponse<object>
+                {
+                    IsSuccess = false,
+                    Message = "ဤဧည့်သည်သည် ဟိုတယ်တွင် ဘွတ်ကင်မှတ်တမ်းများ ရှိနေသဖြင့် ဖျက်သိမ်း၍ မရနိုင်ပါရှင်။",
+                    Data = null
+                });
+            }
 
             _context.Guests.Remove(guest);
             await _context.SaveChangesAsync();
-            return NoContent();
+
+            return Ok(new RoomResponse<object>
+            {
+                IsSuccess = true,
+                Message = "ဧည့်သည်မှတ်တမ်းကို အောင်မြင်စွာ ဖျက်သိမ်းပြီးပါပြီ။",
+                Data = null
+            });
         }
     }
 }
