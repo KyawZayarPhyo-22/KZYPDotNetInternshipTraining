@@ -1,0 +1,6 @@
+@KZYPDotNetInternshipTraining.HotelRoomBookingSystem_HostAddress = http://localhost:5231
+
+GET {{KZYPDotNetInternshipTraining.HotelRoomBookingSystem_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

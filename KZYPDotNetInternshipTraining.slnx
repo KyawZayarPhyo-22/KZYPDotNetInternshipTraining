@@ -4,5 +4,6 @@
   <Project Path="KZYPDotNetInternshipTraining.EFCoreDatabaseSample.Database/KZYPDotNetInternshipTraining.EFCoreDatabaseSample.Database.csproj" Id="96d28869-90f1-4319-a559-9de207091f95" />
   <Project Path="KZYPDotNetInternshipTraining.EFCoreDatabaseSample/KZYPDotNetInternshipTraining.EFCoreDatabaseSample.csproj" Id="82a09c8b-d3da-46ca-bf0e-750d38b5d2dc" />
   <Project Path="KZYPDotNetInternshipTraining.EFCoreModelSample/KZYPDotNetInternshipTraining.EFCoreModelSample.csproj" Id="e295ec67-f715-41b9-abde-a456bb120b72" />
+  <Project Path="KZYPDotNetInternshipTraining.HotelRoomBookingSystem/KZYPDotNetInternshipTraining.HotelRoomBookingSystem.csproj" Id="6575e9f7-857e-46ba-9695-8eb34f3b3099" />
   <Project Path="KZYPDotNetInternshipTrainingWebApiSample/KZYPDotNetInternshipTraining.WebApiSample.csproj" Id="f72744b5-0f44-465e-b36a-a32bf2b167b4" />
 </Solution>
