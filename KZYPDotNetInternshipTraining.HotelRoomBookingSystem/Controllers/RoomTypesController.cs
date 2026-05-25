@@ -17,7 +17,6 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
             _context = context;
         }
 
-        // ၁။ GET: api/roomtypes \
         [HttpGet]
         public async Task<IActionResult> GetRoomTypes()
         {
@@ -25,6 +24,7 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
 
             var responseData = roomTypes.Select(rt => new RoomTypeResponse
             {
+                RoomTypeId = rt.RoomTypeId,
                 RoomName = rt.RoomName,
                 BasePrice = rt.BasePrice,
                 MaxGuests = rt.MaxGuests,
@@ -41,7 +41,6 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
             return Ok(response);
         }
 
-        // ၂။ GET: api/roomtypes/{id} (ID အလိုက် တစ်ခုချင်းစီ ရှာဖွေပြသရန်)
         [HttpGet("{id}")]
         public async Task<IActionResult> GetRoomType(int id)
         {
@@ -74,9 +73,7 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
             });
         }
 
-        // ၃။ POST: api/roomtypes 
         [HttpPost]
-        // // [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CreateRoomType([FromBody] RoomTypeRequest request)
         {
             var roomType = new RoomType
@@ -109,7 +106,6 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
             return Ok(response);
         }
 
-        // ၄။ PUT: api/roomtypes/{id} 
         [HttpPut("{id}")]
         // // [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateRoomType(int id, [FromBody] RoomTypeRequest request)
@@ -141,19 +137,27 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
             });
         }
 
-        // ၅။ DELETE: api/roomtypes/{id}
         [HttpDelete("{id}")]
-        // // [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteRoomType(int id)
         {
             var roomType = await _context.RoomTypes.FindAsync(id);
-
             if (roomType == null)
             {
                 return NotFound(new RoomResponse<object>
                 {
                     IsSuccess = false,
-                    Message = "ဖျက်သိမ်းမည့် RoomType ရှာမတွေ့ပါ။",
+                    Message = "ဖျက်သိမ်းမည့် အခန်းအမျိုးအစားမှတ်တမ်း ရှာမတွေ့ပါ။",
+                    Data = null
+                });
+            }
+
+            var hasRooms = await _context.Rooms.AnyAsync(r => r.RoomTypeId == id);
+            if (hasRooms)
+            {
+                return BadRequest(new RoomResponse<object>
+                {
+                    IsSuccess = false,
+                    Message = "ဤအခန်းအမျိုးအစားကို ချိတ်ဆက်အသုံးပြုထားသော အခန်းများ (Rooms) ရှိနေသေးသဖြင့် ဖျက်သိမ်း၍ မရနိုင်ပါရှင်။",
                     Data = null
                 });
             }
@@ -164,7 +168,7 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
             return Ok(new RoomResponse<object>
             {
                 IsSuccess = true,
-                Message = "Room type deleted successfully.",
+                Message = "အခန်းအမျိုးအစားမှတ်တမ်းကို အောင်မြင်စွာ ဖျက်သိမ်းပြီးပါပြီ။",
                 Data = null
             });
         }
