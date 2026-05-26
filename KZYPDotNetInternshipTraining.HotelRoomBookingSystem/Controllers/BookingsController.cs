@@ -5,6 +5,11 @@ using KZYPDotNetInternshipTraining.HotelRoomBookingSystem.HotelModels;
 
 namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
 {
+    public class BookingPatchRequest
+    {
+        public string BookingStatus { get; set; } = null!;
+    }
+
     [Route("api/[controller]")]
     [ApiController]
     public class BookingsController : ControllerBase
@@ -60,7 +65,7 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
                 return BadRequest(new RoomResponse<object> { IsSuccess = false, Message = "ရွေးချယ်ထားသော အခန်းမရှိပါ။", Data = null });
             }
 
-          if (room.Status != "Available")
+            if (room.Status != "Available")
             {
                 return BadRequest(new RoomResponse<object> { IsSuccess = false, Message = "ဤအခန်းသည် လောလောဆယ် မအားပါ။", Data = null });
             }
@@ -111,6 +116,8 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
             });
         }
 
+        
+
         [HttpPut("{id}/cancel")]
         public async Task<IActionResult> CancelBooking(int id)
         {
@@ -124,7 +131,6 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
             booking.BookingStatus = "Cancelled";
 
             var room = await _context.Rooms.FindAsync(booking.RoomId);
-
             if (room != null) room.Status = "Available";
 
             await _context.SaveChangesAsync();

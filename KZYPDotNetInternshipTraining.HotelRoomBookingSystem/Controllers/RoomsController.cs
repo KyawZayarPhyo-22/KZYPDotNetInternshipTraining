@@ -40,7 +40,6 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
             return Ok(response);
         }
 
-        // ၂။ POST: api/rooms 
         [HttpPost]
         //[Authorize(Roles = "Admin")]
 

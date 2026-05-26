@@ -1,6 +1,7 @@
 ﻿using KZYPDotNetInternshipTraining.HotelRoomBookingSystem.HotelData;
 using KZYPDotNetInternshipTraining.HotelRoomBookingSystem.HotelModels;
 using KZYPDotNetInternshipTraining.HotelRoomBookingSystem.HotelModels.KZYPDotNetInternshipTraining.HotelRoomBookingSystem.HotelModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -30,14 +31,13 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
                 PaymentMethod = request.PaymentMethod,
                 TransactionId = request.TransactionId,
                 TransactionSsPath = request.TransactionSsPath,
-                Status = "Pending",
+                //Status = "Pending",
                 PaymentDate = DateTime.Now
             };
 
             _context.Payments.Add(payment);
             await _context.SaveChangesAsync();
 
-            // တရားဝင် ဖန်တီးထားသော PaymentResponse အတိုင်း သန့်ရှင်းစွာ အဖြေပြန်ထုတ်ပေးခြင်း
             var response = new PaymentResponse
             {
                 PaymentId = payment.PaymentId,
@@ -46,7 +46,7 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
                 PaymentMethod = payment.PaymentMethod,
                 TransactionId = payment.TransactionId,
                 TransactionSsPath = payment.TransactionSsPath,
-                Status = payment.Status,
+                Status = "Panding",
                 PaymentDate = payment.PaymentDate
             };
 
@@ -55,6 +55,7 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
 
      
         [HttpPut("/api/admin/payments/{id}/verify")]
+        //[Authorize("Admin")]
         public async Task<IActionResult> VerifyPayment(int id)
         {
             var payment = await _context.Payments.FindAsync(id);
