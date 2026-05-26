@@ -20,13 +20,17 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllRooms()
         {
-            var rooms = await _context.Rooms.ToListAsync();
+            var rooms = await _context.Rooms
+                .Include(r => r.RoomType)
+                .ToListAsync();
 
             var responseData = rooms.Select(r => new RoomResponse
             {
                 RoomId = r.RoomId,
                 RoomNumber = r.RoomNumber,
-                RoomTypeId = r.RoomTypeId,
+
+                RoomName = r.RoomType?.RoomName ?? "No Type Name",
+
                 status = r.Status
             }).ToList();
 

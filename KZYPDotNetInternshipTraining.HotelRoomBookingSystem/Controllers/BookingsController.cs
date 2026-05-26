@@ -94,6 +94,7 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
             };
 
             _context.Bookings.Add(booking);
+            room.Status = "Occupied";
             await _context.SaveChangesAsync();
 
             var responseData = new BookingResponse
@@ -111,12 +112,12 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
             return Ok(new RoomResponse<BookingResponse>
             {
                 IsSuccess = true,
-                Message = "Booking created successfully.",
+                Message = "Booking created successfully and room status updated to Occupied.",
                 Data = responseData
             });
         }
 
-        
+
 
         [HttpPut("{id}/cancel")]
         public async Task<IActionResult> CancelBooking(int id)
