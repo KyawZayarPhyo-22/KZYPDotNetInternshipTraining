@@ -1,9 +1,15 @@
 <Solution>
   <Project Path="D:/C#training/KZYPDotNetInternshipTraining/KZYPDotNetInternshipTraining.AdoDotNetSample/KZYPDotNetInternshipTraining.AdoDotNetSample.csproj" />
   <Project Path="D:/C#training/KZYPDotNetInternshipTraining/KZYPDotNetInternshipTraining.Dapper/KZYPDotNetInternshipTraining.DapperSample.csproj" />
+  <Project Path="KZYPDotNetInternshipTraining.BlazorHttpSample/KZYPDotNetInternshipTraining.BlazorHttpSample.csproj" Id="1341fec3-e836-4138-bd29-6ac8c8235bb8" />
   <Project Path="KZYPDotNetInternshipTraining.EFCoreDatabaseSample.Database/KZYPDotNetInternshipTraining.EFCoreDatabaseSample.Database.csproj" Id="96d28869-90f1-4319-a559-9de207091f95" />
   <Project Path="KZYPDotNetInternshipTraining.EFCoreDatabaseSample/KZYPDotNetInternshipTraining.EFCoreDatabaseSample.csproj" Id="82a09c8b-d3da-46ca-bf0e-750d38b5d2dc" />
   <Project Path="KZYPDotNetInternshipTraining.EFCoreModelSample/KZYPDotNetInternshipTraining.EFCoreModelSample.csproj" Id="e295ec67-f715-41b9-abde-a456bb120b72" />
+  <Project Path="KZYPDotNetInternshipTraining.HighChartSample/KZYPDotNetInternshipTraining.HighChartSample.csproj" Id="c47de9e0-f71e-46e2-a355-1c1717ab6c10" />
   <Project Path="KZYPDotNetInternshipTraining.HotelRoomBookingSystem/KZYPDotNetInternshipTraining.HotelRoomBookingSystem.csproj" Id="6575e9f7-857e-46ba-9695-8eb34f3b3099" />
+  <Project Path="KZYPDotNetInternshipTraining.HttpClient/KZYPDotNetInternshipTraining.HttpClient.csproj" Id="df5e7cf3-98ca-4d71-a2bf-0b86a19ac5b0" />
+  <Project Path="KZYPDotNetInternshipTraining.MVCApp/KZYPDotNetInternshipTraining.MVCApp.csproj" Id="f3e5d3b4-1396-4100-9c29-60fc87b1319a" />
+  <Project Path="KZYPDotNetInternshipTraining.RealtimeChartSample/KZYPDotNetInternshipTraining.RealtimeChartSample.csproj" Id="9aa7e104-aa71-42ec-98f0-1ec8ff14cfe5" />
+  <Project Path="KZYPDotNetInternshipTraining.RestSharp/KZYPDotNetInternshipTraining.RestSharp.csproj" Id="5dd335f9-1429-411f-b8f2-002d8347d101" />
   <Project Path="KZYPDotNetInternshipTrainingWebApiSample/KZYPDotNetInternshipTraining.WebApiSample.csproj" Id="f72744b5-0f44-465e-b36a-a32bf2b167b4" />
 </Solution>

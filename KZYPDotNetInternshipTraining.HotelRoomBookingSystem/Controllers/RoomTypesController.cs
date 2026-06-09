@@ -74,6 +74,8 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
         }
 
         [HttpPost]
+        //[Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> CreateRoomType([FromBody] RoomTypeRequest request)
         {
             var roomType = new RoomType
@@ -107,7 +109,7 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
         }
 
         [HttpPut("{id}")]
-        // // [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateRoomType(int id, [FromBody] RoomTypeRequest request)
         {
             var roomType = await _context.RoomTypes.FindAsync(id);
@@ -138,6 +140,8 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
         }
 
         [HttpDelete("{id}")]
+        //[Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> DeleteRoomType(int id)
         {
             var roomType = await _context.RoomTypes.FindAsync(id);

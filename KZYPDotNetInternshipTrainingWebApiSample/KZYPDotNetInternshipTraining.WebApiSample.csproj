@@ -11,10 +11,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\KZYPDotNetInternshipTraining.DatabaseSample.Database\KZYPDotNetInternshipTraining.DatabaseSample.Database.csproj" />
 		  <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.7" />
 		  <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="10.1.7" />
 		  <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.1.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KZYPDotNetInternshipTraining.EFCoreDatabaseSample.Database\KZYPDotNetInternshipTraining.EFCoreDatabaseSample.Database.csproj" />
   </ItemGroup>
 
 </Project>

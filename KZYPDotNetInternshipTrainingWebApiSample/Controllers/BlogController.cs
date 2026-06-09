@@ -25,6 +25,7 @@ public class BlogController : ControllerBase
         }
         return Ok(item);
     }
+
     [HttpPost]
     public IActionResult CreateStudent(BlogCreateRequestModel studentRequestModel)
     {
@@ -43,6 +44,7 @@ public class BlogController : ControllerBase
             Message = result > 0 ? "Saving Successful" : "Saving Failed"
         });
     }
+
 
     [HttpPut("{id}")]
     public IActionResult UpdateStudent(BlogUpdateRequestModel request, int id)

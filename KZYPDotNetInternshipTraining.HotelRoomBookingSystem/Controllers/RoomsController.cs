@@ -77,10 +77,9 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
             return Ok(response);
         }
 
-        // ၃။ PUT: api/rooms/{RoomId} 
         [HttpPut("{RoomId}")]
         //[Authorize(Roles = "Admin")]
-
+ 
         public async Task<IActionResult> UpdateRoom(int RoomId, [FromBody] RoomRequest request)
         {
             var room = await _context.Rooms.FindAsync(RoomId);
@@ -109,7 +108,6 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
             });
         }
 
-        // ၄။ DELETE: api/rooms/{RoomId} 
         [HttpDelete("{RoomId}")]
         //[Authorize(Roles = "Admin")]
 
@@ -138,7 +136,6 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
             });
         }
 
-        // ၅။ GET: api/rooms/available 
         [HttpGet("available")]
         public async Task<IActionResult> GetAvailableRooms([FromQuery] DateTime checkIn, [FromQuery] DateTime checkOut)
         {

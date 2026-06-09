@@ -55,7 +55,6 @@ namespace KZYPDotNetInternshipTraining.HotelRoomBookingSystem.Controllers
 
      
         [HttpPut("/api/admin/payments/{id}/verify")]
-        //[Authorize("Admin")]
         public async Task<IActionResult> VerifyPayment(int id)
         {
             var payment = await _context.Payments.FindAsync(id);
