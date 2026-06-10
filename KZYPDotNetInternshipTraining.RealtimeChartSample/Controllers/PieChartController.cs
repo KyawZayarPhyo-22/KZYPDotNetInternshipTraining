@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.SignalR;
 
 using System.Collections.Concurrent;
 
-namespace NLADotNetInternshipTraining.RealtimeChatApp.Controllers;
+namespace KZYPDotNetInternshipTraining.RealtimeChartSample.Controllers;
 
 public class PieChartController : Controller
 {
